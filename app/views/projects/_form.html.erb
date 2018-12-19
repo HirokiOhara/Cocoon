@@ -19,7 +19,6 @@
   <div class="details">
     <%= link_to_add_association '行を追加', form, :tasks %>
     <table>
-      <% debugger %>
       <%= form.fields_for :tasks do |task| %>
         <%= render 'task_fields', f: task %>
       <% end %>
