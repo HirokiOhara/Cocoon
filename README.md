@@ -23,6 +23,19 @@ Things you may want to cover:
 
 * ...
 
+## 背景
+親：Project   
+子：Task   
+とする投稿webアプリを作った。
+```
+$ rails new cocoon_sample
+```
+の後に、
+```
+$ rails g scaffold projects name:string
+$ rails g model tasks name:string
+```
+
 ## 追加するgem
 ```
 gem 'cocoon'
@@ -80,13 +93,15 @@ gem 'jquery-ui-rails'
 ...
 ```
 
-#### 子側の入力フォーム(app/views/orders/_form.html.erb)
+#### 子側の入力フォーム(app/views/orders/_task_fields.html.erb)
 ```
   <tr class="nested-fields">
     <td><%= f.text_field :name %></td>
     <td><%= link_to_remove_association "行削除", f %></td>
   </tr>
 ```
+
+最後に「bundle install」と「rails db:migrate」を忘れずに。
 
 #### 参考文献
 * 「nathanvda/cocoon」 ( https://github.com/nathanvda/cocoon#partial )
